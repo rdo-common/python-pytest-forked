@@ -15,8 +15,8 @@ Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{
 BuildArch:      noarch
 
 BuildRequires:  python2-devel python3-devel
-BuildRequires:  %{py2_dist py pytest setuptools_scm}
-BuildRequires:  %{py3_dist py pytest setuptools_scm}
+BuildRequires:  python2-py python2-pytest python2-setuptools_scm
+BuildRequires:  python3-py python3-pytest python3-setuptools_scm
 
 %description
 %{desc}
@@ -25,7 +25,7 @@ BuildRequires:  %{py3_dist py pytest setuptools_scm}
 Summary:        %{summary}
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
-Requires:       %{py2_dist py pytest}
+Requires:       python2-py python2-pytest
 %description -n python2-%{pypi_name}
 %{desc}
 
@@ -33,7 +33,7 @@ Requires:       %{py2_dist py pytest}
 Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
-Requires:       %{py3_dist py pytest}
+Requires:       python3-py python3-pytest
 %description -n python3-%{pypi_name}
 %{desc}
 
