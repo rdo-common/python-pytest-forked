@@ -6,7 +6,7 @@ C++ libraries that might crash the process. To use the plugin, simply use the\
 
 Name:           python-%{pypi_name}
 Version:        0.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        py.test plugin for running tests in isolated forked subprocesses
 
 License:        MIT
@@ -66,6 +66,9 @@ PYTHONPATH=%{buildroot}%{python3_sitelib} py.test-%{python3_version} testing
 %{python3_sitelib}/pytest_forked*
 
 %changelog
+* Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Thu Aug 17 2017 Scott Talbert <swt@techie.net> - 0.2-2
 - Updated to use py[23]dist macros for BR and R
 
