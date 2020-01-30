@@ -6,7 +6,7 @@ C++ libraries that might crash the process. To use the plugin, simply use the\
 
 Name:           python-%{pypi_name}
 Version:        1.1.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        py.test plugin for running tests in isolated forked subprocesses
 
 License:        MIT
@@ -49,6 +49,9 @@ PYTHONPATH=%{buildroot}%{python3_sitelib} py.test-%{python3_version} testing
 %{python3_sitelib}/pytest_forked*
 
 %changelog
+* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Thu Oct 10 2019 Scott Talbert <swt@techie.net> - 1.1.1-1
 - Update to new upstream release 1.1.1 (#1760556)
 
