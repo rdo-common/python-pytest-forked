@@ -6,13 +6,16 @@ C++ libraries that might crash the process. To use the plugin, simply use the\
 
 Name:           python-%{pypi_name}
 Version:        1.1.1
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        py.test plugin for running tests in isolated forked subprocesses
 
 License:        MIT
 URL:            https://github.com/pytest-dev/pytest-forked
 Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
+# Fix pytest 5 compatibility
+# From upstream PR: https://github.com/pytest-dev/pytest-forked/pull/32
+Patch0: fix-pytest5-compatibility.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-py python3-pytest python3-setuptools_scm
@@ -29,7 +32,7 @@ Requires:       python3-py
 %{desc}
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
+%autosetup -n %{pypi_name}-%{version} -p1
 rm -f testing/conftest.pyc
 rm -rf testing/__pycache__
 
@@ -49,6 +52,9 @@ PYTHONPATH=%{buildroot}%{python3_sitelib} py.test-%{python3_version} testing
 %{python3_sitelib}/pytest_forked*
 
 %changelog
+* Fri May 29 2020 Charalampos Stratakis <cstratak@redhat.com> - 1.1.1-5
+- Fix pytest 5 compatibility
+
 * Fri May 29 2020 Charalampos Stratakis <cstratak@redhat.com> - 1.1.1-4
 - Drop manual requires on python3-pytest to support usage with pytest4 compat package
 
