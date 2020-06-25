@@ -1,17 +1,14 @@
 %global pypi_name pytest-forked
 
 Name:           python-%{pypi_name}
-Version:        1.1.1
-Release:        6%{?dist}
+Version:        1.2.0
+Release:        1%{?dist}
 Summary:        py.test plugin for running tests in isolated forked subprocesses
 
 License:        MIT
 URL:            https://github.com/pytest-dev/pytest-forked
 Source0:        %{pypi_source}
 BuildArch:      noarch
-# Fix pytest 5 compatibility
-# From upstream PR: https://github.com/pytest-dev/pytest-forked/pull/32
-Patch0: fix-pytest5-compatibility.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  %{py3_dist py pytest setuptools setuptools_scm}
@@ -50,6 +47,9 @@ Requires:       %{py3_dist py}
 %{python3_sitelib}/pytest_forked*
 
 %changelog
+* Thu Jun 25 2020 Scott Talbert <swt@techie.net> - 1.2.0-1
+- Update to new upstream release 1.2.0 (#1851035)
+
 * Wed Jun 24 2020 Scott Talbert <swt@techie.net> - 1.1.1-6
 - Modernize Python packaging; BR setuptools
 
