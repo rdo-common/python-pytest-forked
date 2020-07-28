@@ -1,7 +1,7 @@
 %global pypi_name pytest-forked
 
 Name:           python-%{pypi_name}
-Version:        1.2.0
+Version:        1.3.0
 Release:        1%{?dist}
 Summary:        py.test plugin for running tests in isolated forked subprocesses
 
@@ -47,6 +47,9 @@ Requires:       %{py3_dist py}
 %{python3_sitelib}/pytest_forked*
 
 %changelog
+* Tue Jul 28 2020 Scott Talbert <swt@techie.net> - 1.3.0-1
+- Update to new upstream release 1.3.0 (#1861096)
+
 * Thu Jun 25 2020 Scott Talbert <swt@techie.net> - 1.2.0-1
 - Update to new upstream release 1.2.0 (#1851035)
 
