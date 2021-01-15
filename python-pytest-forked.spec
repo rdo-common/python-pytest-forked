@@ -2,7 +2,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.3.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        py.test plugin for running tests in isolated forked subprocesses
 
 License:        MIT
@@ -10,6 +10,7 @@ URL:            https://github.com/pytest-dev/pytest-forked
 Source0:        %{pypi_source}
 BuildArch:      noarch
 
+BuildRequires:  openstack-macros
 BuildRequires:  python3-devel
 BuildRequires:  %{py3_dist py pytest setuptools setuptools_scm}
 
@@ -47,6 +48,9 @@ Requires:       %{py3_dist py}
 %{python3_sitelib}/pytest_forked*
 
 %changelog
+* Fri Jan 15 2021 Joel Capitao <jcapitao@redhat.com> - 1.3.2-2
+- Add openstack-macros BR
+
 * Tue Jul 28 2020 Scott Talbert <swt@techie.net> - 1.3.0-1
 - Update to new upstream release 1.3.0 (#1861096)
 
